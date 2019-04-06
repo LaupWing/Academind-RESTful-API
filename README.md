@@ -9,7 +9,7 @@ The whole idea behind restful is to transfer data around. It is an alternative t
 
 Example: You have a server and the client browser. The client sends a request to the server and you get back a response, in the response you have the diffrent pages which is send by the server. That is a tradtional webpage. What if you want to make a request to an server but not for web pages but for data. If you are only interested in getting data from, thats when a restful api come to use. 
 
-### Note
+### Notes
 * RESTful api's are stateless backends  
 * RESTful Constraints
     * Client-server Architecture
