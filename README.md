@@ -26,3 +26,8 @@ Example: You have a server and the client browser. The client sends a request to
     * Code on Demand
         * Executable Code could be transferred
 The most important constraints above is the stateless constraint. You have to know that the data is not saved in de server, because dont realy reload pages with a RESTful api.
+
+### Cors
+
+What is cors?
+Cors stands for Cross Origin Resource Sharing, the behind cors is security. If the client and the server has a diffrent urls the security kicks in aka cors the prevent this connection. The solution to this is sending information in the header to the client that it is okay to get information from another url.

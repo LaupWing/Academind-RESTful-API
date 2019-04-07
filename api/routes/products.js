@@ -1,6 +1,7 @@
 const express   =   require('express');
 const router    =   express.Router();
-
+const Product   =   require('../models/products')
+const mongoose  =   require('mongoose')
 // Get is a method that will handles incoming get requests.\
 // The first parameter is the route/path of the url
 // THe url of the get request below is /products but you only see /
@@ -13,8 +14,25 @@ router.get('/', (req, res, next)=>{
 })
 
 router.post('/', (req, res, next)=>{
+    const products = {
+        name: req.body.name,
+        price: req.body.price
+    }
+    const product = new Product({
+        _id: new mongoose.Types.ObjectId(),
+        name: req.body.name,
+        price: req.body.price
+    })
+    product
+        .save()
+        .exec()
+        .then(result=>{
+        console.log(result)
+    })
+    .catch(err=>console.log(err))
     res.status(200).json({
-        message: 'Handling POST requests to /products'
+        message: 'Handling POST requests to /products',
+        createdProduct: products
     })
 })
 
